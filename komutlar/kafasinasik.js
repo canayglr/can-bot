@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
@@ -28,6 +28,7 @@ exports.run = (client, message, args) => {
       ':ghost: Iskaladın Dostum, Tekrar Dene !',
     ];
     var headshot = Math.floor(Math.random()*Random.length);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

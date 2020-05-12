@@ -37,6 +37,7 @@ instagram('https://www.instagram.com/' + kullanici)
     
   message.channel.send(embed)
 }) 
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 }
 
 exports.conf = {

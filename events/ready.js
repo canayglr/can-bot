@@ -12,10 +12,12 @@ module.exports = client => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
   client.user.setStatus("idle");
      var oyun = [
+          `Efsane Geri Döndü • Kaldığımız Yerden Devam Ediyoruz`,
           `${prefix}yardım • ${client.guilds.size} Sunucu • ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`,
           `${prefix}öner • İstek Ve Önerilerinizi Bize Bildirin !`,
           `${prefix}yenilik • Yepyeni Özellikleri Görebilirsiniz !`,
-          `${prefix}davet • Botumuzu Sunucunuza Davet Edebilirsiniz !`
+          `${prefix}davet • Botumuzu Sunucunuza Davet Edebilirsiniz !`,
+          `Efsane Geri Döndü • Kaldığımız Yerden Devam Ediyoruz`,
       ];
 
       setInterval(function() {

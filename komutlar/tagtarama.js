@@ -15,6 +15,7 @@ if(!tag) return message.reply(`:warning: Bir Tag Girmelisiniz Örnek Kullanım; 
              // Failmessage
             message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`**<a:elmas:605083521199112199> Bir Hata Oluştu <a:canx:616921650490900501>**\n<a:elmas:605083521199112199> Lütfen Tekrar Deneyiniz !`).setColor("RANDOM").setAuthor(`${message.author.username} tarafından yapıldı.`, message.author.avatarURL).setTimestamp());
     });
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 }
 
 exports.conf = {

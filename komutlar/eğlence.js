@@ -15,7 +15,7 @@ exports.run = async (client, message, args, tools) => {
 	const embed = new Discord.RichEmbed()
 		.setTitle(`**Sayfa ${page} of ${pages.length}**`)
 		.setAuthor('• EĞLENCE KOMUTLARI •')
-		.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -hackle** <:canright:603301130730078219> Bulunduğunuz Sunucuyu Haçklersiniz\n\n**• -ilginçbilgi** <:canright:603301130730078219> İlginç Bilgiler Öğrenmeye Hazırmısın ?\n\n**• -boğ** <:canright:603301130730078219> Belirlenen Kullanıcıyı Boğarsın\n\n**• -hesapla** <:canright:603301130730078219> Belirtilen İşlemi Yapar\n\n**• -headshot** <:canright:603301130730078219> Belirtilen Kişinin Kafasına Sıkar.\n\n**• -fakemesaj** <:canright:603301130730078219> İstediğiniz Bir Mesajı Seçtiğiniz Kişiye Yazdırır\n\n**• -post** <:canright:603301130730078219> Rastgele Eğlenceli Postlar Gösterir\n\n**• -tokatla** <:canright:603301130730078219> Belirlenen Kişiyi Bi Güzel Tokatlar !\n\n**• -kafaat** <:canright:603301130730078219> Belirlenen Kişiye Bir Kafa Geçirirsiniz !\n\n**• -kişiliktesti** <:canright:603301130730078219> Eğlenceli Bir Kişilik Testi Yapar\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
+		.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -slot** <:canright:603301130730078219> Slot Oynarsınız !\n\n**• -hackle** <:canright:603301130730078219> Bulunduğunuz Sunucuyu Haçklersiniz\n\n**• -ilginçbilgi** <:canright:603301130730078219> İlginç Bilgiler Öğrenmeye Hazırmısın ?\n\n**• -boğ** <:canright:603301130730078219> Belirlenen Kullanıcıyı Boğarsın\n\n**• -hesapla** <:canright:603301130730078219> Belirtilen İşlemi Yapar\n\n**• -headshot** <:canright:603301130730078219> Belirtilen Kişinin Kafasına Sıkar.\n\n**• -fakemesaj** <:canright:603301130730078219> İstediğiniz Bir Mesajı Seçtiğiniz Kişiye Yazdırır\n\n**• -post** <:canright:603301130730078219> Rastgele Eğlenceli Postlar Gösterir\n\n**• -tokatla** <:canright:603301130730078219> Belirlenen Kişiyi Bi Güzel Tokatlar !\n\n**• -kafaat** <:canright:603301130730078219> Belirlenen Kişiye Bir Kafa Geçirirsiniz !\n\n**• -kişiliktesti** <:canright:603301130730078219> Eğlenceli Bir Kişilik Testi Yapar\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
 		.setFooter("Botumuza Her Geçen Gün Yeni Özellikler Eklenmektedir")
 		.setThumbnail("https://cdn.discordapp.com/avatars/536627383743283230/1a70d569e19d849b90901071bd0bcdc5.png?size=2048")
 		.setColor(0xff8000)
@@ -36,7 +36,7 @@ exports.run = async (client, message, args, tools) => {
 				page--;
 				embed.setTitle(`**Sayfa ${page} of ${pages.length}**`)
 				embed.setAuthor('• EĞLENCE KOMUTLARI •')
-				embed.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -hackle** <:canright:603301130730078219> Bulunduğunuz Sunucuyu Haçklersiniz\n\n**• -ilginçbilgi** <:canright:603301130730078219> İlginç Bilgiler Öğrenmeye Hazırmısın ?\n\n**• -boğ** <:canright:603301130730078219> Belirlenen Kullanıcıyı Boğarsın\n\n**• -hesapla** <:canright:603301130730078219> Belirtilen İşlemi Yapar\n\n**• -headshot** <:canright:603301130730078219> Belirtilen Kişinin Kafasına Sıkar.\n\n**• -fakemesaj** <:canright:603301130730078219> İstediğiniz Bir Mesajı Seçtiğiniz Kişiye Yazdırır\n\n**• -post** <:canright:603301130730078219> Rastgele Eğlenceli Postlar Gösterir\n\n**• -tokatla** <:canright:603301130730078219> Belirlenen Kişiyi Bi Güzel Tokatlar !\n\n**• -kafaat** <:canright:603301130730078219> Belirlenen Kişiye Bir Kafa Geçirirsiniz !\n\n**• -kişiliktesti** <:canright:603301130730078219> Eğlenceli Bir Kişilik Testi Yapar\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
+				embed.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -slot** <:canright:603301130730078219> Slot Oynarsınız !\n\n**• -hackle** <:canright:603301130730078219> Bulunduğunuz Sunucuyu Haçklersiniz\n\n**• -ilginçbilgi** <:canright:603301130730078219> İlginç Bilgiler Öğrenmeye Hazırmısın ?\n\n**• -boğ** <:canright:603301130730078219> Belirlenen Kullanıcıyı Boğarsın\n\n**• -hesapla** <:canright:603301130730078219> Belirtilen İşlemi Yapar\n\n**• -headshot** <:canright:603301130730078219> Belirtilen Kişinin Kafasına Sıkar.\n\n**• -fakemesaj** <:canright:603301130730078219> İstediğiniz Bir Mesajı Seçtiğiniz Kişiye Yazdırır\n\n**• -post** <:canright:603301130730078219> Rastgele Eğlenceli Postlar Gösterir\n\n**• -tokatla** <:canright:603301130730078219> Belirlenen Kişiyi Bi Güzel Tokatlar !\n\n**• -kafaat** <:canright:603301130730078219> Belirlenen Kişiye Bir Kafa Geçirirsiniz !\n\n**• -kişiliktesti** <:canright:603301130730078219> Eğlenceli Bir Kişilik Testi Yapar\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
 				embed.setFooter("Botumuza Her Geçen Gün Yeni Özellikler Eklenmektedir")
 				embed.setThumbnail("https://cdn.discordapp.com/avatars/536627383743283230/1a70d569e19d849b90901071bd0bcdc5.png?size=2048")
 				embed.setColor(0xff8000)
@@ -61,28 +61,6 @@ exports.run = async (client, message, args, tools) => {
 		})
 
 	})
-
-
-
-
-
-
-//▶️◀️
-
-
-
-
-
-
-
-
-
-
-
-//`
-
-
-
 };
 
 exports.conf = {

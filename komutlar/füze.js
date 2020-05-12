@@ -18,6 +18,7 @@ exports.run = (client, message, args) => {
     .setImage(random_fuze[Math.floor(Math.random() * random_fuze.length)])
     .setDescription(`** ${kisi} Öyle Ölmem Füze At Dedi Ve [** ` + message.author.username + '**] Tarafından :rocket: Yedi , Acıtmış Olmalı**')
     return message.channel.sendEmbed(embed);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

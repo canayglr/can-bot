@@ -16,8 +16,8 @@ exports.run = (client, message, params) => {
       .addField('Durum:', durm)
       .addField('Şu an oynadığı oyun:', message.author.presence.game ? message.author.presence.game.name : 'Şu an oyun oynamıyor')
       .addField('BOT mu?', message.author.bot ? '\n Evet' : 'Hayır')
-      console.log("!kullanıcıbilgim komutu " + message.author.username + " tarafından kullanıldı.")
-      return message.channel.sendEmbed(kullanicibilgimk);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
+     return message.channel.sendEmbed(kullanicibilgimk);
   }
 };
 

@@ -1,7 +1,7 @@
 var Jimp = require('jimp');
 const Discord = require('discord.js');
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, bot, message, args) => {
 
   var user = message.mentions.users.first() || message.author;
       message.channel.startTyping();
@@ -21,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
           message.channel.stopTyping();
             });
         });
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
     };
 
 exports.conf = {

@@ -23,8 +23,9 @@ exports.run = (client, message, params) => {
     .addField('Sahibi:', message.guild.owner + ' (' + message.guild.ownerID + ')')
     .addField('Kanal sayısı:', message.guild.channels.size)
     .addField('Oluşturulma tarihi:', message.guild.createdAt)
-    return message.channel.sendEmbed(sunucubilgi);
+     message.channel.sendEmbed(sunucubilgi);
     }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

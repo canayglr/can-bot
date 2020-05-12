@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 exports.run = (client, message, args) => {
 
@@ -20,6 +20,7 @@ exports.run = (client, message, args) => {
   userr.setNickname(nick)
   message.delete();
   message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`${user} isimli üyenin adı başarıyla \`${nick}\` olarak değiştirildi! <a:cantick:623582918203408384>`).setColor('RANDOM'));
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 exports.conf = {
   enabled: true,

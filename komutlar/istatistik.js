@@ -12,6 +12,7 @@ exports.run = (client, msg) => {
 • Kanallar         :: ${client.channels.size.toLocaleString()}
 • Ping             :: ${client.ping}
 • Discord.JS sürüm :: v${Discord.version}`);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + msg.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + msg.guild.name + "]");
 };
 
 exports.conf = {

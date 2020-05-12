@@ -1,10 +1,11 @@
+const Discord = require('discord.js');
 const ms = require('ms');
 const ayarlar = require('../ayarlar.json');
 
 var prefix = ayarlar.prefix
 
 exports.run = (client, message, args) => {
-	if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply('Bu Komudu Kullanmak İçin ``BAN_MEMBERS`` Yetkiniz Olmalıdır !');
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Bu Komudu Kullanmak İçin ``Yönetici`` Yetkiniz Olmalıdır !');
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
   .setColor(0xFF0000)
@@ -31,7 +32,7 @@ exports.run = (client, message, args) => {
     message.channel.overwritePermissions(message.guild.id, {
       SEND_MESSAGES: false
     }).then(() => {
-      message.channel.send(`<a:canuyari:603528216275058718> Kanal **${ms(ms(time), { long:true })}** Süreyle Kilitlendi Hazırda Bekle !`).then(() => {
+      message.channel.send(`<a:canuyari:603528216275058718> Kanal **${ms(ms(time), { long:true })}** Süreyle Kilitlendi Hazırda Bekle ! *(Açmak İçin -kilit aç)*`).then(() => {
 
         client.lockit[message.channel.id] = setTimeout(() => {
           message.channel.overwritePermissions(message.guild.id, {
@@ -45,6 +46,7 @@ exports.run = (client, message, args) => {
       });
     });
   }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 exports.conf = {
   enabled: true,

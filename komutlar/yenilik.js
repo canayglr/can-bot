@@ -8,14 +8,13 @@ exports.run = (client, message, params) => {
     .setColor(0xff0080)
     .setTimestamp()
     .setAuthor("• YENİLİK •")
-		.addField('-rolver , -rolal', 'Rol Verme, Alma Komutlarımız Aktif')
 		.addField('-eğlence' , 'Yepyeni Eğlence Komutları Geldi !')
-		.addField('-ototag', 'Ototag Artık Hizmetinizde Bilgi Almak İçin **-ototagbilgi**')
-		.addField('-yetkilerim', 'Bulunduğunuz Sunucudaki Yetkilerinizi Görürsünüz !')
+		.addField('-yetkili', 'Sunucunuza Renk Katacak Harika Yenilikler Geldi !')
+		.addField('-git , -çek', 'Etiketlediğiniz Kullanıcının Yanına Gidersiniz/Çekersiniz')
 		.addField('-nick', 'Kullanıcının İsmini Değiştirirsiniz !')
 		.addField('-yardım', 'Sistemi Değiştirildi')
 		.addField('Daha Fazla Komut İçin **-yardım** Yazmanız Yeterlidir' , 'Botun Davet Linkini Görmek İçin **-davet**')
-    return message.author.sendEmbed(yenilikbilgi); }
+     message.author.sendEmbed(yenilikbilgi); }
     if (message.channel.type !== 'dm') {
       const yenilikbilgi = new Discord.RichEmbed()
     .setColor(0xff0080)
@@ -28,8 +27,9 @@ exports.run = (client, message, params) => {
     .addField('-yardım', 'Sistemi Değiştirildi !')
     .addField('-öneri', 'Sistemi Geliştirildi !')
 		.addField('Daha Fazla Komut İçin **-yardım** Yazmanız Yeterlidir' , 'Botun Davet Linkini Görmek İçin **-davet**')
-    return message.channel.sendEmbed(yenilikbilgi);
     }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");  
+
 };
 
 exports.conf = {

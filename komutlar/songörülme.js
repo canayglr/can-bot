@@ -1,4 +1,4 @@
-exports.run = async (Bastion, message, args) => {
+exports.run = async (client, message, args) => {
   try {
     let user;
     if (message.mentions.users.size) {
@@ -57,7 +57,9 @@ exports.run = async (Bastion, message, args) => {
   }
   catch (e) {
     console.log(e);
-  }
+  
+}
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

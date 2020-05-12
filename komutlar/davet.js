@@ -17,7 +17,8 @@ exports.run = (client, message) => {
     .setAuthor(message.author.username, message.author.avatarURL)
     .addField('Botumuzun Davet Linki !', `[Tıkla <a:tiklaa:605726140723757077>](https://discordapp.com/oauth2/authorize?client_id=536627383743283230&scope=bot&permissions=8)`, true)
     .setThumbnail('https://cdn.discordapp.com/emojis/601760026071400458.gif')
-    return message.channel.sendEmbed(pingozel)}
+    message.channel.sendEmbed(pingozel)}
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

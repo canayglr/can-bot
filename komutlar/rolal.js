@@ -1,10 +1,10 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
-exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu komudu kullanmak için **Rolleri Yönet** yetkisine sahip olmalısın.').setColor(10038562));
+exports.run = async (client, message, args) => {
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu komudu kullanmak için **Yönetici** yetkisine sahip olmalısın.').setColor(10038562));
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
     if (!rMember) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`<a:canuyari:603528216275058718> Lütfen bir kullanıcı ismi gir.\nÖrnek: ` + ayarlar.prefix + `rolal **@İsim @Yetki**`).setColor(10038562).setAuthor(`${message.author.username} tarafından istendi.`, message.author.avatarURL).setTimestamp());
     let role = message.mentions.roles.first()
@@ -17,6 +17,7 @@ exports.run = async (bot, message, args) => {
     await (rMember.removeRole(aRole.id))
 	message.delete();
     message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`${rMember} isimli üyenin \`${role.name}\` isimli yetkisi başarıyla alındı! <a:canx:616921650490900501>`).setColor('RANDOM'));
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

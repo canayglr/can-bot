@@ -14,7 +14,8 @@ exports.run = (client, message, args) => {
     .setColor('RANDOM')
     .setImage(random_fuze[Math.floor(Math.random() * random_fuze.length)])
     .setDescription(`** ${kisi} Adlı Kullanıcı [** ` + message.author.username + '**] Tarafından HeadShot Yedi , Acıtmış Olmalı**')
-    return message.channel.sendEmbed(embed);
+    message.channel.sendEmbed(embed);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

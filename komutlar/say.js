@@ -17,6 +17,7 @@ module.exports.run = async (client, message, args) => {
  
   message.channel.sendEmbed(arvelosembed)
   message.delete()
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 }
 exports.conf = {
   enabled: true,

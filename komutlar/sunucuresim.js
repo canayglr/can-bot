@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 
 module.exports.run = (client, message, params) => {
@@ -16,8 +16,9 @@ module.exports.run = (client, message, params) => {
     .setTimestamp()
     .setDescription('')
 	.setImage(message.guild.iconURL)
-    return message.channel.sendEmbed(sunucubilgi);
+     message.channel.sendEmbed(sunucubilgi);
     }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

@@ -15,7 +15,7 @@ exports.run = async (client, message, args, tools) => {
 	const embed = new Discord.RichEmbed()
 		.setTitle(`**Sayfa ${page} of ${pages.length}**`)
 		.setAuthor('• KULLANICI KOMUTLARI •')
-		.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -avatar** <:canright:603301130730078219> Sizin Veya Başkasının Avatarını Görmeye Yarar\n\n**• -bilgi** <:canright:603301130730078219> Bot ile ilgili bilgi verir.\n\n**• -davet** <:canright:603301130730078219> Botun davet linkini gönderir.\n\n**• -id** <:canright:603301130730078219> Bir Kullanıcının ID Sini Bulmaya Yarar\n\n**• -istatistik** <:canright:603301130730078219> Botun istatistik gösterir.\n\n**• -öner** <:canright:603301130730078219> Bot Hakkındaki Önerilerinizi Yetkililere Ulaştırır\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
+		.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -çek** <:canright:603301130730078219> Etiketlediğiniz Kullanıcıyı Yanınıza Çekmeyi Sağlar\n\n**• -git** <:canright:603301130730078219> Etiketlediğiniz Kullanıcının Yanına Gitmenizi Sağlar\n\n**• -rolsay** <:canright:603301130730078219> Bulunduğunuz Sunucudaki Rolleri ve Üye Sayısını Sıralar\n\n**• -emoji-göster** <:canright:603301130730078219> Seçtiğiniz Emoji Hakkında Bilgi Verir\n\n**• -avatar** <:canright:603301130730078219> Sizin Veya Başkasının Avatarını Görmeye Yarar\n\n**• -namaz** <:canright:603301130730078219> Seçtiğiniz Şehrin Namaz Saatlerini Gösterir\n\n**• -bilgi** <:canright:603301130730078219> Bot ile ilgili bilgi verir.\n\n**• -davet** <:canright:603301130730078219> Botun davet linkini gönderir.\n\n**• -id** <:canright:603301130730078219> Bir Kullanıcının ID Sini Bulmaya Yarar\n\n**• -istatistik** <:canright:603301130730078219> Botun istatistik gösterir.\n\n**• -öner** <:canright:603301130730078219> Bot Hakkındaki Önerilerinizi Yetkililere Ulaştırır\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
 		.setFooter("Botumuza Her Geçen Gün Yeni Özellikler Eklenmektedir")
 		.setThumbnail("https://cdn.discordapp.com/avatars/536627383743283230/1a70d569e19d849b90901071bd0bcdc5.png?size=2048")
 		.setColor(0xff8000)
@@ -36,7 +36,7 @@ exports.run = async (client, message, args, tools) => {
 				page--;
 				embed.setTitle(`**Sayfa ${page} of ${pages.length}**`)
 				embed.setAuthor('• KULLANICI KOMUTLARI •')
-				embed.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -avatar** <:canright:603301130730078219> Sizin Veya Başkasının Avatarını Görmeye Yarar\n\n**• -bilgi** <:canright:603301130730078219> Bot ile ilgili bilgi verir.\n\n**• -davet** <:canright:603301130730078219> Botun davet linkini gönderir.\n\n**• -id** <:canright:603301130730078219> Bir Kullanıcının ID Sini Bulmaya Yarar\n\n**• -istatistik** <:canright:603301130730078219> Botun istatistik gösterir.\n\n**• -öner** <:canright:603301130730078219> Bot Hakkındaki Önerilerinizi Yetkililere Ulaştırır\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
+		    embed.setDescription('๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑\n**• -çek** <:canright:603301130730078219> Etiketlediğiniz Kullanıcıyı Yanınıza Çekmeyi Sağlar\n\n**• -git** <:canright:603301130730078219> Etiketlediğiniz Kullanıcının Yanına Gitmenizi Sağlar\n\n**• -rolsay** <:canright:603301130730078219> Bulunduğunuz Sunucudaki Rolleri ve Üye Sayısını Sıralar\n\n**• -emoji-göster** <:canright:603301130730078219> Seçtiğiniz Emoji Hakkında Bilgi Verir\n\n**• -avatar** <:canright:603301130730078219> Sizin Veya Başkasının Avatarını Görmeye Yarar\n\n**• -namaz** <:canright:603301130730078219> Seçtiğiniz Şehrin Namaz Saatlerini Gösterir\n\n**• -bilgi** <:canright:603301130730078219> Bot ile ilgili bilgi verir.\n\n**• -davet** <:canright:603301130730078219> Botun davet linkini gönderir.\n\n**• -id** <:canright:603301130730078219> Bir Kullanıcının ID Sini Bulmaya Yarar\n\n**• -istatistik** <:canright:603301130730078219> Botun istatistik gösterir.\n\n**• -öner** <:canright:603301130730078219> Bot Hakkındaki Önerilerinizi Yetkililere Ulaştırır\n\n๑ ▬▬▬▬▬▬▬▬▬▬~ஜ۩۞۩ஜ~▬▬▬▬▬▬▬▬▬▬▬­­­­­­­­­ ๑')
 				embed.setFooter("Botumuza Her Geçen Gün Yeni Özellikler Eklenmektedir")
 				embed.setThumbnail("https://cdn.discordapp.com/avatars/536627383743283230/1a70d569e19d849b90901071bd0bcdc5.png?size=2048")
 				embed.setColor(0xff8000)
@@ -82,7 +82,7 @@ exports.run = async (client, message, args, tools) => {
 //`
 
 
-
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

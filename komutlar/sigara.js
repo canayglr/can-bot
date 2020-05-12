@@ -8,29 +8,30 @@ exports.run = (client, message, args) => {
         }, 1500);
         setTimeout(() => {
             msg.edit(':smoking::cloud::cloud::cloud::cloud:');
-        }, 1800);
+        }, 2000);
         setTimeout(() => {
             msg.edit(':smoking::cloud::cloud::cloud::cloud::cloud:');
-        }, 2300);
+        }, 2500);
         setTimeout(() => {
             msg.edit(':smoking::cloud::cloud::cloud::cloud::cloud::cloud:');
-        }, 2800);
+        }, 3000);
         setTimeout(() => {
             msg.edit(':smoking::cloud::cloud::cloud::cloud::cloud::cloud::cloud:');
-        }, 3300);
+        }, 3500);
         setTimeout(() => {
             msg.edit(':smoking::cloud::cloud::cloud::cloud::cloud:');
-        }, 3800);
+        }, 4000);
         setTimeout(() => {
             msg.edit(':smoking::cloud::cloud:');
-        }, 4300);
+        }, 4500);
         setTimeout(() => {
             msg.edit(':smoking::cloud:');
-        }, 4800);
+        }, 5000);
     setTimeout(() => {
             msg.edit('**Sigara Bitti** *Tıpkı Yaşama Sevincim Gibi*');
-        }, 5300);
+        }, 5500);
     });
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

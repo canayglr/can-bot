@@ -30,7 +30,7 @@ message.channel.send(post)
 .then(embedMessage => {
 		embedMessage.react("603193080656429069");
 	});
-client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + message.author.tag + " **-emojim** Komutunu Kullandı ! [" + message.guild.name + "]");
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 exports.conf = {
 enabled: true,

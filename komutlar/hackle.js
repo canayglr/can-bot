@@ -36,6 +36,7 @@ exports.run = (client, message, args) => {
           message.edit('❗ Hackleme İşlemi İptal Edildi ! *Belkide Hiç Başlamamıştır* 😉');
       }, 10000);
   });
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

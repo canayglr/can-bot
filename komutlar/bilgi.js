@@ -15,7 +15,8 @@ exports.run = (client, message) => {
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
     .setDescription('Bot sürümü: v' + ayarlar.surum + ' Yapımcı: Can \n\n_**BOTU EKLEMEK İÇİN LİNK:**_\n\nhttps://discordbots.org/bot/536627383743283230 \n\n**:copyright: 2019 CanReis**');
-    return message.author.sendEmbed(pingozel)
+     message.author.sendEmbed(pingozel)
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

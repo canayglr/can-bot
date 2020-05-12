@@ -1,3 +1,19 @@
+//Glitch için olan yer
+const express = require("express");
+const app = express();
+const http = require("http");
+
+app.get("/", (request, response) => {
+  console.log(
+    ` az önce pinglenmedi. Sonra ponglanmadı... ya da başka bir şeyler olmadı.`
+  );
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
@@ -207,107 +223,35 @@ client.on('message', msg => {
 }
 }
 });
-client.on("message", message => {
-
-//var i = db.fetch(`prefix_${message.guild.id}`)
-
+const ms = require("parse-ms");
+client.on("message", async message => {
   
-    let afk_kullanici = message.mentions.users.first() || message.author;
-    //let guildim = db.fetch(`guild_${message.guild.id}`);
-    if(message.content.startsWith(ayarlar.prefix+"afk")) return; 
- if (message.author.bot === true) return;
-   
-
-     if(message.content.includes(`<@${afk_kullanici.id}>`))
-        //if(message.guild.id === `${db.fetch(`guild_${message.guild.id}`)}`) {
-         if(db.has(`afks_${afk_kullanici.id}`)) {
-             const afksuan = new Discord.RichEmbed()
+  if(message.author.bot) return;
+  if(!message.guild) return;
+  if(message.content.includes(`${prefix}afk`)) return;
+  
+  if(await db.fetch(`afk_${message.author.id}`)) {
+    db.delete(`afk_${message.author.id}`);
+    db.delete(`afk_süre_${message.author.id}`);
+    message.reply("Başarıyla afk modundan çıktınız <a:cantick:623582918203408384>");
+  }
+  
+  var USER = message.mentions.users.first();
+  if(!USER) return;
+  var REASON = await db.fetch(`afk_${USER.id}`);
+  
+  if(REASON) {
+    let süre = await db.fetch(`afk_süre_${USER.id}`);
+    let timeObj = ms(Date.now() - süre);
+    //message.channel.send(`${USER.tag} kullanıcısı AFK\n AFK süresi: ${timeObj.hours}h ${timeObj.minutes}m ${timeObj.seconds}s\nSebep:\n **${REASON}**` )
+const afksuan = new Discord.RichEmbed()
                      .setColor("GREEN")
 					 .setThumbnail("https://gifimage.net/wp-content/uploads/2017/09/afk-gif-3.gif")
-                     .setDescription(`**${client.users.get(afk_kullanici.id).tag}** Adlı Kullanıcı Şuanda AFK! \n**Sebep:** \n${db.fetch(`afks_${afk_kullanici.id}`)}`)
+                     .setDescription(`**${USER.tag}** Adlı Kullanıcı Şuanda AFK! \n\n**AFK Süresi:** \n${timeObj.hours} **saat** ${timeObj.minutes} **dakika** ${timeObj.seconds} **saniye** \n\n**Sebep:** \n\`\`${REASON}\`\``)
                      message.channel.send(afksuan).then(message => message.delete(8000));
-         }
-        // if(message.guild.id === guildim) {
-         if(db.has(`afks_${message.author.id}`)) {
-                        let user = message.member
-
-             const basarili = new Discord.RichEmbed()
-
-                 .setColor("RED")
-                 .setDescription("<@"+`${message.author.id}`+">"+"**Başarıyla AFK Modundan Çıktın <a:cantick:623582918203408384>**")
-
-                              //user.setNickname(message.author.nickname)
-
-                message.channel.send(basarili).then(message => message.delete(8000));
-              /*let userla = db.fetch(`userim_${message.guild.id}`);
-              user.setNickname(userla)*/
-             db.delete(`afks_${message.author.id}`)
-         }
-
-       });
-
-
+  }
+});
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === prefix + 'otorol') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otorol** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'otorolbilgi') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otorolbilgi** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'otomesajkapat') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otomesajkapat** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'otorolmesajkapat') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otorolmesajkapat** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'otorolsıfırla') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otorolsıfırla** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'otorol-ayarla') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otorol-ayarla** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'otorolbilgi') {
-    client.guilds.get("537614145982562314").channels.get("537632322225438731").send("" + msg.author.tag + " **-otorolbilgi** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'post') {
-    client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + msg.author.tag + " **-post** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'stresçarkı') {
-    client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + msg.author.tag + " **-stresçarkı** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'yazıtura') {
-    client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + msg.author.tag + " **-yazıtura** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'hackle') {
-    client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + msg.author.tag + " **-hackle** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'yaz') {
-    client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + msg.author.tag + " **-yaz** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'atasözü') {
-    client.guilds.get("537614145982562314").channels.get("537707761908056064").send("" + msg.author.tag + " **-atasözü** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'bilgilerim') {
-    client.guilds.get("537614145982562314").channels.get("538331274184622081").send("" + msg.author.tag + " **-bilgilerim** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'sunucubilgi') {
-    client.guilds.get("537614145982562314").channels.get("538331274184622081").send("" + msg.author.tag + " **-sunucubilgi** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-  if (msg.content.toLowerCase() === prefix + 'istatistik') {
-    client.guilds.get("537614145982562314").channels.get("538331274184622081").send("" + msg.author.tag + " **-istatistik** Komutunu Kullandı ! [" + msg.guild.name + "]");
-  }
-   /*var guildID = "539157355888377866";
-   var channelID = "539171859498008576";
-   if (msg.channel.id === '539374244094803988') {
-     if (msg.content.toLowerCase() === 'kaydol') {
-       var role = msg.guild.roles.find(role => role.name === "Üyeler");
-       var role2 = msg.guild.roles.find(role => role.name === "Yeni Üye");
-       msg.member.addRole(role);
-       msg.member.removeRole(role2);
-       msg.delete()
-       client.guilds.get(guildID).channels.get(channelID).send("**" + msg.author.tag + "** Üyeler Rolü Verildi.");
-     }
-   }*/
    if (msg.content.toLowerCase() === ('espiri yap'|| 'espri yap' || '-espiri')) {
  		let embed = new Discord.RichEmbed()
  	  .setColor("RANDOM")

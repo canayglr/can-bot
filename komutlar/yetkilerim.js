@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const { stripIndents } = require('common-tags');
 
 exports.run = (client, msg, args) => {

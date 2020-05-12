@@ -130,14 +130,15 @@ return text;
     .addField('Bulut Oranı', '**%' + clouds.all + '**', inline=true)
     .addField('Hava Koşulları', 'Mevcut Sıcaklık: **' + ccelsius + ' °C / ' + cfahrenheit + ' °F**\nEn Yüksek Sıcaklık: **' + hcelsius + ' °C / ' + hfahrenheit + ' °F**\nEn Düşük Sıcaklık: **' + lcelsius + ' °C / ' + lfahrenheit + ' °F**\nNem: **%' + main.humidity + '**\nBarometrik Basınç: **' + main.pressure + '**', inline=true)    //.addField('Güneş', 'Gündoğumu: **' + UnixToDate(sys.sunrise)[1] + '**\nGünbatımı: **' + UnixToDate(sys.sunset)[1] + '**', inline=true)
     .addField('Güneş','Gündoğumu: **' + UnixToDate(sys.sunrise) + '**\nGünbatımı: **' + UnixToDate(sys.sunset) + '**',inline=true)
-    return message.channel.sendEmbed(embed);
+    message.channel.sendEmbed(embed);
 }
 catch (e) {
     const error = new discord.RichEmbed()
     .setColor(0xff7f00)
     .setDescription('Bir hata ile karşılaştık : \n`' + e.message + '`')
-    return message.channel.sendEmbed(error);
+    message.channel.sendEmbed(error);
 }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
     };
 
 exports.conf = {

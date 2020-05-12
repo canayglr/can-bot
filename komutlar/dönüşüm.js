@@ -47,6 +47,7 @@ exports.run = (client, message, args) => {
     .setTitle("**" + donusen.username + " Dönüştüğün Karakter**")
     message.channel.send(donusum)
   }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

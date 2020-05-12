@@ -17,7 +17,8 @@ exports.run = (client, message, args) => {
     .setColor('RANDOM')
     .setImage(random_fuze[Math.floor(Math.random() * random_fuze.length)])
     .setDescription(`** ${kisi} Adlı Kişi [** ` + message.author.username + '**] Nin Sevgisine Boğuldu !**')
-    return message.channel.sendEmbed(embed);
+    message.channel.sendEmbed(embed);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

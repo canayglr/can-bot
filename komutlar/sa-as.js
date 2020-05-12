@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const db = require('quick.db');
 
 exports.run = async (client, message, args) => {
@@ -32,6 +32,7 @@ exports.run = async (client, message, args) => {
     db.delete(`as_${message.guild.id}`)
     message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`**Açma İşlemi Başarıyla Tamamlandı <a:cantik:601758596937809941>**\n<a:elmas:605083521199112199> Tekrar Kapatmak İçin \`-sa-as kapat\` Yazmanız Yeterlidir !`).setColor("RANDOM").setAuthor(`${message.author.username} tarafından yapıldı.`, message.author.avatarURL).setTimestamp());
 }
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };        
 exports.conf = {
   enabled: true,

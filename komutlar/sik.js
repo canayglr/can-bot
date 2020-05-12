@@ -7,7 +7,8 @@ exports.run = (client, message, args) => {
     .setColor('RANDOM')
     .setImage('https://cdn.discordapp.com/emojis/601758157831667732.gif')
     .setDescription(`**<a:canuyari:603528216275058718> ${message.author.username} Amacın Ne Bilmiyorum Ama [** ` + kisi + '**] Kıçını Kolla Dostum !**')
-    return message.channel.sendEmbed(embed);
+     message.channel.sendEmbed(embed);
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
 };
 
 exports.conf = {

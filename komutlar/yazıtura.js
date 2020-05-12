@@ -18,17 +18,14 @@ exports.run = function(client, message) {
 		.setThumbnail("https://i.hizliresim.com/BOLmyV.png")	
     message.channel.send("Para Atılıyor <a:loading:605083580414033929>").then(async message => {
                   setTimeout(() => {
-          message.edit('Para Atılıyor <a:loading:605083580414033929>');
-      }, 1000);
-        setTimeout(() => {
           message.edit('https://www.gifmania.com.tr/Hareketli-Gifler-Nesneler/Gif-Resimleri-Para/Animasyonlar-Euro/Euro-Madeni-Paralar/Euro-Madeni-Paralar-88503.gif');
-      }, 2000);
+      }, 1000);
         setTimeout(() => {
           message.edit('https://www.gifmania.com.tr/Hareketli-Gifler-Nesneler/Gif-Resimleri-Para/Animasyonlar-Euro/Euro-Madeni-Paralar/Euro-Madeni-Paralar-88503.gif');
       }, 3000);
         setTimeout(() => {
           message.edit(embedyazı);
-      }, 4000);
+      }, 5000);
     });
 	} else if (cevap === "YAZI-TURA:**__TURA__**") {
 
@@ -38,17 +35,14 @@ exports.run = function(client, message) {
 		.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/c/cd/1TL_reverse.png")
 		message.channel.send("Para Atılıyor <a:loading:605083580414033929>").then(async message => {
                   setTimeout(() => {
-          message.edit('Para Atılıyor <a:loading:605083580414033929>');
+          message.edit('https://www.gifmania.com.tr/Hareketli-Gifler-Nesneler/Gif-Resimleri-Para/Animasyonlar-Euro/Euro-Madeni-Paralar/Euro-Madeni-Paralar-88503.gif3');
       }, 1000);
-        setTimeout(() => {
-          message.edit('https://www.gifmania.com.tr/Hareketli-Gifler-Nesneler/Gif-Resimleri-Para/Animasyonlar-Euro/Euro-Madeni-Paralar/Euro-Madeni-Paralar-88503.gif');
-      }, 2000);
         setTimeout(() => {
           message.edit('https://www.gifmania.com.tr/Hareketli-Gifler-Nesneler/Gif-Resimleri-Para/Animasyonlar-Euro/Euro-Madeni-Paralar/Euro-Madeni-Paralar-88503.gif');
       }, 3000);
         setTimeout(() => {
           message.edit(embedtura);
-      }, 4000);
+      }, 5000);
     });
 
 	}
