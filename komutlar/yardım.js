@@ -12,6 +12,7 @@ exports.run = (client, message, params) => {
     .addField("**<a:canyildiz:601758557175676928> -yetkili**","Yetkili komutlarını Gösterir")
     .addField('**<a:canyildiz:601758557175676928> -kullanıcı**', 'Kullanıcı Komutlarını Gösterir')
     .addField('**<a:canyildiz:601758557175676928> -yenilik**', 'Yeni Özellikleri Gösterir')
+    .addField('**<a:canyildiz:601758557175676928> -destek**', 'Destek Sunucumuz')
     .setImage("https://cdn.discordapp.com/attachments/537167775555125249/603990589234741269/ezgif.com-gif-maker.gif")
     .setFooter("Botumuza Her Geçen Gün Yeni Özellikler Eklenmektedir !")
     return message.author.sendEmbed(yardım); }
@@ -24,11 +25,13 @@ exports.run = (client, message, params) => {
     .addField("**<a:canyildiz:601758557175676928> -yetkili**","Yetkili komutlarını Gösterir")
     .addField('**<a:canyildiz:601758557175676928> -kullanıcı**', 'Kullanıcı Komutlarını Gösterir')
     .addField('**<a:canyildiz:601758557175676928> -yenilik**', 'Yeni Özellikleri Gösterir')
+    .addField('**<a:canyildiz:601758557175676928> -destek**', 'Destek Sunucumuz')
     .setFooter("Botumuza Her Geçen Gün Yeni Özellikler Eklenmektedir !")
     .setImage("https://cdn.discordapp.com/attachments/537167775555125249/603990589234741269/ezgif.com-gif-maker.gif")
      message.channel.sendEmbed(yardım);
-    }
 client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
+    
+}
 };
 
 exports.conf = {

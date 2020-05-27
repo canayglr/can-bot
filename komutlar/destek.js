@@ -7,16 +7,16 @@ exports.run = (client, message) => {
     .setColor('RANDOM')
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .addField('Botumuzun Davet Linki !', `[Tıkla <a:tiklaa:605726140723757077>](https://top.gg/bot/536627383743283230)`, true)
-    .setThumbnail('https://cdn.discordapp.com/emojis/601760026071400458.gif')
+    .addField('Botumuzun Destek Sunucusu !', `[Tıkla <a:tiklaa:605726140723757077>](https://discord.gg/JSPNwt8)`, true)
+    .setThumbnail('https://i.hizliresim.com/4tIxiy.png')
     message.author.sendEmbed(ozelmesajkontrol)}
   if (message.channel.type !== 'dm') {
 	const pingozel = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .addField('Botumuzun Davet Linki !', `[Tıkla <a:tiklaa:605726140723757077>](https://top.gg/bot/536627383743283230)`, true)
-    .setThumbnail('https://cdn.discordapp.com/emojis/601760026071400458.gif')
+    .addField('Botumuzun Destek Sunucusu !', `[Tıkla <a:tiklaa:605726140723757077>](https://discord.gg/JSPNwt8)`, true)
+    .setThumbnail('https://i.hizliresim.com/4tIxiy.png')
     message.channel.sendEmbed(pingozel)
 client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
   }
@@ -25,11 +25,11 @@ client.guilds.get("537614145982562314").channels.get("537707761908056064").sendM
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['botu ekle', 'botu davet et', 'botuekle', 'invite'],
+  aliases: ['destek-sunucu', 'istek'],
   permLevel: 0
 };
 exports.help = {
-  name: 'davet',
+  name: 'destek',
   description: 'Botun davet linkini gönderir.',
   usage: 'davet'
 };

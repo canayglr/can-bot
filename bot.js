@@ -1,18 +1,16 @@
-//Glitch için olan yer
-const express = require("express");
-const app = express();
-const http = require("http");
+// Main Dosyası 
 
+const express = require("express");
+const http = require("http");
+const app = express();
+
+app.listen(process.env.PORT);
 app.get("/", (request, response) => {
-  console.log(
-    ` az önce pinglenmedi. Sonra ponglanmadı... ya da başka bir şeyler olmadı.`
-  );
   response.sendStatus(200);
 });
-app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me`);
+}, 1000 * 60 * 3);
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -25,74 +23,8 @@ require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
 
-const rando_espri = [
-'ÇaImak fiiIinin gelecek zamanı nedir? Hapse girmek.',
-'Geçen gün taksi çevirdim hala dönüyor.',
-'Adamın biri kızmış istemeye gelmişler.',
-'Funda Arar dediler ama hala daha aramadı.',
-'Adamın kafası atmış bacakları eşek.',
-'Geçen gün geçmiş günlerimi aradım ama meşguldü.',
-'Adamın birisi televizyona çıkmış bir daha indirememişler.',
-'Adamın biri gülmüş, saksıya koymuşlar.',
-'Sakla samanı, inekler aç kalsın.',
-'Adamın biri güneşte yanmış, ayda düz.',
-'Kediler niçin havaalanına gidemez? Çünkü pist var.',
-'Yarasa yararlı bir hayvandır. Yararlı bir hayvan olmasaydı yaramasa derlerdi.',
-'Karar verdim 14 Şubatta bizim asansöre hediye alacağım. 10 yıldır çıkıyoruz daha birbirimiz hiç kırmadık.',
-    "Sinemada on dakika ara dedi, aradım aradım açmadı.",
-    "Röntgen Filmi çektirdik , yakında sinemalarda.",
-    "Yeni yapılmış resimlere ne denir?\n- **nev**resim",
-    "En ihtiyaç duyulan arı?\n- Baş**arı**",
-    "Gitarı getirde biraz şarkı söyleyelim.\n - Abi arı sokmasın ama?",
-    "Geçen bi taksi çevirdim. Hayla dönüyor.",
-    "Bugünler de gözlerim çok **kız**arıyor ya!\n- Valla bende arıyorum",
-    "Acıkan var mı beyler?\n- Yok abi tatlı kan var",
-    "İshal olmuş böceğe ne denir?\n- **CIRCIR** Böceği",
-    "Padişah tahta çıkınca ne yapmış?\n- Tahtayı yerine takmış",
-    "Tebrikler kazandınız, şimdi tencere oldunuz!",
-    "Kaba kuvvet uyguluma , kap kırılabilir.",
-    "Asker, adın ne?\n- Emre**dersiniz** komutanım!",
-    "Yahu sen nasıl bir kulsun?\n- Endoplazmik Reti**kul**um",
-    "Bizim CD sürücümüz ehliyeti nerden almış acaba ?",
-    "Ben hikaye yazarım, **Ebru Destan**",
-    "Yanii uzun lafın kısası, **U.L**",
-    "Ben arabayı kullanıyodum, Leonardo da Vinci",
-    "Mercedes namaz kılmıyor ama Renault **Clio**",
-    "Bebeğiniz oldu. Gözünüz aydın kulağınız manisa",
-    "Yılan'dan korkma, yılmayandan kork.",
-    "Denizaltı'nın bir üst modeli nedir?\n- Deniz**yedi**",
-    "Ben kahve içiyorum, **Nurgün Yeşilçay**",
-    "Bak şu karışıdaki uçak pisti, ama bir türlü temizlemediler.",
-    "Adamın biri kalemi yere atmış düşmemiş neden?\n- Çünkü pilot kalemmiş.",
-    "Derste çocuğun biri kalemini yemiş neden?\n- Çünkü dolma kalemmiş.",
-    "Yemeğin suyuna kim bandı?\n- Koli bandı.",
-    "İneklerin sevmediği element?\n- **Az**ot",
-    "Top ağlarda, ben ağlamaz mıyım?",
-    "Binanın biri **yanmış**, diğeri de **düz**.",
-    "Kadının biri güneşte **yanmış**, ay da **düz**.",
-    "Ben Yedigün içiyorum sen de Onbeşgün iç.",
-    "Türkiye'nin en yeni şehri neresidir?\n- **Nevşehir**",
-    "Türkiye'nin 1. ili hangisidir?\n- **Van**",
-    "Masa için hangi örtü kullanılmaz?\n- **Bitki Örtüsü**",
-    "Sana bir terlik yapıyım, terlerini koyarsın oraya.",
-    "Sana bi kıllık yapayım, kıllarını koyarsın",
-    "Rıdvan'ın bir büyüğünün ismi nedir?\n- Rıd**two**",
-    "Oğlumun adını **Mafya Babası** koyarsam mafya babası olmuş olur muyum?",
-    "Zenginler et, fakirler hayalet yer",
-    "**Seven** unutmaz olum **eight** unutur",
-    "Baraj dendi mi akan sular durur",
-    "Şeytan kapıyı nasıl çalar?\n- **Din** den dön!!",
-    "Ayda 9500TL Kazanmak İster misin??\n- Evet!!!\nO zaman Ay'a git. :)",
-    "Bana Funda Arar dediler ama hala daha aramadı.",
-    "Saç**malanmaz**. Saç, taranır.",
-    "Sinüs 60, Kosinüs tutmuş.",
-    "Yağmur **yağ**mış, kar peynir.",
-    "Eğer Dünya dönerse bende kebap!!",
-    "Bu erikson. Başka erik yok maalesef",
-    "Hoş**çakal**, Hoştilki.",
-    "Bill Gates neden grip olmuş?\n**Windows** açık kalmış da ondan…",
-    "Cem Uzan, üstüne örtiyim.",
-    "Otobüste otomatik kapıya yakın durmayın! Çarpar, böler, karekökünü alır."
+const rando_espri = ['ÇaImak fiiIinin gelecek zamanı nedir? Hapse girmek','Geçen gün taksi çevirdim hala dönüyor','Adamın biri kızmış istemeye gelmişler','Funda Arar dediler ama hala daha aramadı','Adamın kafası atmış bacakları eşek','Geçen gün geçmiş günlerimi aradım ama meşguldü','Adamın birisi televizyona çıkmış bir daha indirememişler','Adamın biri gülmüş, saksıya koymuşlar','Sakla samanı, inekler aç kalsın','Adamın biri güneşte yanmış, ayda düz','Kediler niçin havaalanına gidemez? Çünkü pist var','Yarasa yararlı bir hayvandır. Yararlı bir hayvan olmasaydı yaramasa derlerdi','Karar verdim 14 Şubatta bizim asansöre hediye alacağım. 10 yıldır çıkıyoruz daha birbirimiz hiç kırmadık',"Sinemada on dakika ara dedi, aradım aradım açmadı.",
+"Röntgen Filmi çektirdik , yakında sinemalarda.","Yeni yapılmış resimlere ne denir?\n- **nev**resim","En ihtiyaç duyulan arı?\n- Baş**arı**","Gitarı getirde biraz şarkı söyleyelim.\n - Abi arı sokmasın ama?","Geçen bi taksi çevirdim. Hayla dönüyor.","Bugünler de gözlerim çok **kız**arıyor ya!\n- Valla bende arıyorum","Acıkan var mı beyler?\n- Yok abi tatlı kan var","İshal olmuş böceğe ne denir?\n- **CIRCIR** Böceği","Padişah tahta çıkınca ne yapmış?\n- Tahtayı yerine takmış","Tebrikler kazandınız, şimdi tencere oldunuz!","Kaba kuvvet uyguluma , kap kırılabilir.","Asker, adın ne?\n- Emre**dersiniz** komutanım!","Yahu sen nasıl bir kulsun?\n- Endoplazmik Reti**kul**um","Bizim CD sürücümüz ehliyeti nerden almış acaba ?","Ben hikaye yazarım, **Ebru Destan**","Yanii uzun lafın kısası, **U.L**","Ben arabayı kullanıyodum, Leonardo da Vinci","Mercedes namaz kılmıyor ama Renault **Clio**","Bebeğiniz oldu. Gözünüz aydın kulağınız manisa","Yılan'dan korkma, yılmayandan kork.","Denizaltı'nın bir üst modeli nedir?\n- Deniz**yedi**","Ben kahve içiyorum, **Nurgün Yeşilçay**","Bak şu karışıdaki uçak pisti, ama bir türlü temizlemediler.","Adamın biri kalemi yere atmış düşmemiş neden?\n- Çünkü pilot kalemmiş.","Derste çocuğun biri kalemini yemiş neden?\n- Çünkü dolma kalemmiş.","Yemeğin suyuna kim bandı?\n- Koli bandı.","İneklerin sevmediği element?\n- **Az**ot","Top ağlarda, ben ağlamaz mıyım?","Binanın biri **yanmış**, diğeri de **düz**.","Kadının biri güneşte **yanmış**, ay da **düz**.","Ben Yedigün içiyorum sen de Onbeşgün iç.","Türkiye'nin en yeni şehri neresidir?\n- **Nevşehir**","Türkiye'nin 1. ili hangisidir?\n- **Van**","Masa için hangi örtü kullanılmaz?\n- **Bitki Örtüsü**","Sana bir terlik yapıyım, terlerini koyarsın oraya.","Sana bi kıllık yapayım, kıllarını koyarsın","Rıdvan'ın bir büyüğünün ismi nedir?\n- Rıd**two**","Oğlumun adını **Mafya Babası** koyarsam mafya babası olmuş olur muyum?","Zenginler et, fakirler hayalet yer","**Seven** unutmaz olum **eight** unutur","Baraj dendi mi akan sular durur","Şeytan kapıyı nasıl çalar?\n- **Din** den dön!!","Ayda 9500TL Kazanmak İster misin??\n- Evet!!!\nO zaman Ay'a git. :)","Bana Funda Arar dediler ama hala daha aramadı.","Saç**malanmaz**. Saç, taranır.","Sinüs 60, Kosinüs tutmuş.","Yağmur **yağ**mış, kar peynir.","Eğer Dünya dönerse bende kebap!!","Bu erikson. Başka erik yok maalesef","Hoş**çakal**, Hoştilki.","Bill Gates neden grip olmuş?\n**Windows** açık kalmış da ondan…","Cem Uzan, üstüne örtiyim.","Otobüste otomatik kapıya yakın durmayın! Çarpar, böler, karekökünü alır."  
 ]
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -169,14 +101,9 @@ client.unload = command => {
 };
 client.on('message', msg => {
   if (msg.channel.type !== 'dm') {
-  let sa = db.fetch(`as_${msg.guild.id}`)
-  if (sa === '1') return
-  if (sa === null) {
+  var aslm = db.fetch(`slm_${msg.guild.id}`)
+  if (aslm !== 'off') { 
   if (msg.content.toLowerCase() === 'sa') {
-	if (msg.author.id === '384296034521579520') {
-    msg.reply('Aleyküm Selam Hoşgeldin Sefalar Getirdin Değerli Babam 👑 !');
-	msg.react("👑");
-	}else
   setTimeout(() => {
           msg.react('688046882026684429');
       }, 1000);
@@ -185,10 +112,6 @@ client.on('message', msg => {
       }, 2000);
   }
   if (msg.content.toLowerCase() === 'selamun aleyküm') {
-	if (msg.author.id === '384296034521579520') {
-    msg.reply('Aleyküm Selam Hoşgeldin Sefalar Getirdin Değerli Babam 👑 !');
-	msg.react("👑");
-	}else
     setTimeout(() => {
           msg.react('688046882026684429');
       }, 1000);
@@ -197,10 +120,6 @@ client.on('message', msg => {
       }, 2000);
   }
   if (msg.content.toLowerCase() === 's.a') {
-    if (msg.author.id === '384296034521579520') {
-    msg.reply('Aleyküm Selam Hoşgeldin Sefalar Getirdin Değerli Babam 👑 !');
-	msg.react("👑");
-	}else
     setTimeout(() => {
           msg.react('688046882026684429');
       }, 1000);
@@ -209,10 +128,7 @@ client.on('message', msg => {
       }, 2000);
   }
   if (msg.content.toLowerCase() === 'selam') {
-    if (msg.author.id === '384296034521579520') {
-    msg.reply('Aleyküm Selam Hoşgeldin Sefalar Getirdin Değerli Babam 👑 !');
-  msg.react("👑");
-  }else
+
     setTimeout(() => {
           msg.react('688046882026684429');
       }, 1000);
@@ -220,7 +136,7 @@ client.on('message', msg => {
           msg.react('688046885088395275');
       }, 2000);
   }
-}
+  }
 }
 });
 const ms = require("parse-ms");
@@ -265,14 +181,12 @@ client.on('message', msg => {
  	}
 });
 client.on('guildCreate', guild => {
-      client.guilds.get("537614145982562314").channels.get("538110987270619163").setName(`Toplam Kullanıcı: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`);
-      client.guilds.get("537614145982562314").channels.get("538313681662902282").setName(`Toplam Sunucu: ${client.guilds.size.toLocaleString()}`);
-      client.guilds.get("537614145982562314").channels.get("538313759291080724").setName(`Toplam Kanal: ${client.channels.size.toLocaleString()}`);
+      client.guilds.get("710991177343827969").channels.get("713103839556796576").setName(`Toplam Kullanıcı: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`);
+      client.guilds.get("710991177343827969").channels.get("713103858657656856").setName(`Toplam Sunucu: ${client.guilds.size.toLocaleString()}`);
 });
 client.on('guildDelete', guild => {
-      client.guilds.get("537614145982562314").channels.get("538110987270619163").setName(`Toplam Kullanıcı: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`);
-      client.guilds.get("537614145982562314").channels.get("538313681662902282").setName(`Toplam Sunucu: ${client.guilds.size.toLocaleString()}`);
-      client.guilds.get("537614145982562314").channels.get("538313759291080724").setName(`Toplam Kanal: ${client.channels.size.toLocaleString()}`);
+      client.guilds.get("710991177343827969").channels.get("713103839556796576").setName(`Toplam Kullanıcı: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`);
+      client.guilds.get("710991177343827969").channels.get("713103858657656856").setName(`Toplam Sunucu: ${client.guilds.size.toLocaleString()}`);
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === ('<@!536627383743283230>' || '<@536627383743283230>')) {
@@ -289,12 +203,13 @@ client.on('message', msg => {
 let rrrsembed = new Discord.RichEmbed()
 
 .setColor("BLUE")
-.setTitle(":inbox_tray:| Botumuzu Ekledi xD")
+.setTitle(":inbox_tray: | Botumuzu Ekledi xD")
 .addField("Sunucu Adı:", guild.name)
 .addField("Sunucu sahibi", guild.owner)
 .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
 .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
 .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+.setThumbnail("https://cdn.discordapp.com/emojis/601758526523703296.gif?v=1")
 
    client.guilds.get('537614145982562314').channels.get('597069498306265089').send(rrrsembed); 
   
@@ -311,6 +226,7 @@ let rrrsembed = new Discord.RichEmbed()
 .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
 .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
 .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+.setThumbnail("https://cdn.discordapp.com/emojis/601758542722105375.gif?v=1")
 
    client.guilds.get('537614145982562314').channels.get('597069498306265089').send(rrrsembed); 
 });
@@ -343,7 +259,6 @@ client.on("message", message => {
   db.set(`girdm_${guild.id}`, 1)};
 })*/
 });
-
 client.elevation = message => {
   if(!message.guild) {
 	return; }
@@ -354,3 +269,37 @@ client.elevation = message => {
   return permlvl;
 };
 client.login(ayarlar.token);
+
+// SERVER
+client.on('raw', packet => {
+  if (!['MESSAGE_REACTION_ADD', 'MESSAGE_REACTION_REMOVE'].includes(packet.t)) return;
+  const channel = client.channels.get(packet.d.channel_id);
+  if (channel.messages.has(packet.d.message_id)) return;
+  channel.fetchMessage(packet.d.message_id).then(message => {
+      const emoji = packet.d.emoji.id ? `${packet.d.emoji.name}:${packet.d.emoji.id}` : packet.d.emoji.name;
+      const reaction = message.reactions.get(emoji);
+      if (reaction) reaction.users.set(packet.d.user_id, client.users.get(packet.d.user_id));
+      if (packet.t === 'MESSAGE_REACTION_ADD') client.emit('messageReactionAdd', reaction, client.users.get(packet.d.user_id));
+      if (packet.t === 'MESSAGE_REACTION_REMOVE') client.emit('messageReactionRemove', reaction, client.users.get(packet.d.user_id));
+  });
+});
+// Yukarıdaki kısıma ellemeyin, sadece aşağıdaki yerleri doldurun. İstediğiniz gibi emojileri ve mesajları çoğaltabilirsiniz.
+
+client.on("messageReactionAdd", (reaction, user) => {
+  let message = reaction.message, emoji = reaction.emoji;
+  if (!user || user.bot || !message.channel.guild) return;
+  if (message.id === "710996763510702091" && emoji.id === "603193080656429069") {
+message.guild.member(user).addRoles(["710993745008656435"]);
+user.send(new Discord.RichEmbed().setDescription("`Can-Bot` Rolün Başarıyla Verildi ! \nDestek alabilmek için **!destek** yazabilir veya ses kanalına girip yetkilileri çağırabilirsin !").setColor("RANDOM"))
+  }
+if (message.id === "710996763510702091" && emoji.id === "601758360198709259") {
+message.guild.member(user).addRoles(["710993848712822915"]);
+user.send(new Discord.RichEmbed().setDescription("`Çekiliş` Rolün Başarıyla Verildi ! \nDestek alabilmek için **!destek** yazabilir veya ses kanalına girip yetkilileri çağırabilirsin !").setColor("RANDOM"))
+  }
+});
+client.on("messageReactionRemove", (reaction, user) => {
+  let message = reaction.message, emoji = reaction.emoji;
+  if (!user || user.bot || !message.channel.guild) return;
+  if (message.id === "710996763510702091" && emoji.id === "603193080656429069") message.guild.member(user).removeRoles(["710993745008656435"]);
+  if (message.id === "710996763510702091" && emoji.id === "601758360198709259") message.guild.member(user).removeRoles(["710993848712822915"]);
+});

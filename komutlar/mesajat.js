@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
-  if (message.author.id != "384296034521579520") return message.reply('Bunu Sadece Sahibim Kullanabilir');
+  if (message.author.id != "384296034521579520") return;
       
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
@@ -10,10 +10,12 @@ exports.run = (client, message, args) => {
   .addField('⚠ Uyarı ⚠', 'Bu  komutu özel mesajlarda kullanamazsın.');
   return message.author.sendEmbed(ozelmesajuyari); }
   let guild = message.guild;
-  let reason = args.slice(1).join(' ');
-  let user = message.mentions.users.first();
+  let reason = args.slice(2).join(' ');
+  let user = args[0]
+  let sunucu = args[1]
+  if (!sunucu) return message.reply("Sunucuyu Etiketleyiniz !")
   if (reason.length < 1) return message.reply('Ne göndericem onuda yazı ver.');
-  if (message.mentions.users.size < 1) return message.reply('Kime Mesaj atacam onuda yazı ver.').catch(console.error);
+  if (user.length < 0) return message.reply('Kime Mesaj atacam onuda yazı ver.').catch(console.error);
   message.delete();
   message.reply('Mesajını Gönderdim.')
   const embed = new Discord.RichEmbed()
@@ -21,9 +23,10 @@ exports.run = (client, message, args) => {
   .setTitle(`**Kurucumdan Sana Bir Mesaj Var !**`)
   .setTimestamp()
   .setDescription(reason);
-  return user.send(embed).then((member) => {
+  return client.guilds.get(sunucu).members.get(user).send(embed).then((member) => {
             message.reply("Başarılı !")
         }).catch(() => {
+            console.error
             message.reply("Bir Hata Oluştu !");
         });
 };

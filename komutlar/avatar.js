@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 exports.run = function(client, message) {
     if (!message.guild) return message.author.send('<a:canuyari:603528216275058718> `Bu Komut` komutu sadece sunucularda kullanılabilir.');
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('<a:canuyari:603528216275058718> Bu Komudu Kullanmak İçin ``Mesajları Yönet`` Yetkiniz Olmalıdır !');
     var user = message.mentions.users.first();
     if(!user || message.author.id === user.id) {
     const embed = new Discord.RichEmbed()

@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
     };
     let casper = new Discord.RichEmbed()
         .setColor("BLUE")
-        .setDescription(`<a:canuyari:603528216275058718> ${message.author}, ${Gullanici} seni \`\`${message.member.voiceChannel.name}\`\` odasına çekmek istiyor !`)
+        .setDescription(`<a:canuyari:603528216275058718> ${Gullanici}, ${message.author} seni \`\`${message.member.voiceChannel.name}\`\` odasına çekmek istiyor !`)
             .setFooter('CAN BOT') 
 
     let mesaj = await message.channel.send(casper)

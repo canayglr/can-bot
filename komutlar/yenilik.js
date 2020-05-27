@@ -13,6 +13,7 @@ exports.run = (client, message, params) => {
 		.addField('-git , -çek', 'Etiketlediğiniz Kullanıcının Yanına Gidersiniz/Çekersiniz')
 		.addField('-nick', 'Kullanıcının İsmini Değiştirirsiniz !')
 		.addField('-yardım', 'Sistemi Değiştirildi')
+    .addField('-destek', 'Destek Sunucumuz Açıldı !')
 		.addField('Daha Fazla Komut İçin **-yardım** Yazmanız Yeterlidir' , 'Botun Davet Linkini Görmek İçin **-davet**')
      message.author.sendEmbed(yenilikbilgi); }
     if (message.channel.type !== 'dm') {
@@ -26,9 +27,11 @@ exports.run = (client, message, params) => {
     .addField('-nick', 'Kullanıcının İsmini Değiştirirsiniz !')
     .addField('-yardım', 'Sistemi Değiştirildi !')
     .addField('-öneri', 'Sistemi Geliştirildi !')
+    .addField('-destek', 'Destek Sunucumuz Açıldı !')
 		.addField('Daha Fazla Komut İçin **-yardım** Yazmanız Yeterlidir' , 'Botun Davet Linkini Görmek İçin **-davet**')
-    }
 client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");  
+
+    }
 
 };
 

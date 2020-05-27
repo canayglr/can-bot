@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   if (!message.guild) {
     return message.author.send(':x: `Bu Komut` komutu sadece sunucularda kullanılabilir.');
   }
-if(!message.member.hasPermission(131072)) return message.reply('<a:canuyari:603528216275058718> Bu Komudu Kullanmak İçin ``everyone Atabilme`` Yetkiniz Olmalıdır !');
+if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('<a:canuyari:603528216275058718> Bu Komudu Kullanmak İçin ``YÖNETİCİ`` Yetkiniz Olmalıdır !');
   let mesaj = args.slice(0).join(' ');
   if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');
   const duyuru = new Discord.RichEmbed()
@@ -25,7 +25,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['dyr', 'dy'],
-  permLevel: 3
+  permLevel: 0
 };
 
 exports.help = {

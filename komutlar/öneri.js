@@ -26,7 +26,7 @@ exports.run = async (client, message, args, config) => {
       .addField("Eylem:", "Öneri")
       .addField("Kullanıcı:", message.author.tag)
       .addField("ID", message.author.id)
-      .addField("Sunucu", message.guild.name)
+      .addField("Sunucu", message.guild.name + " | " + message.guild.id)
       .addField('Sahibi:', message.guild.owner + ' (' + message.guild.ownerID + ')')
       .addField("Öneri", öneri)
     
@@ -40,7 +40,7 @@ client.guilds.get("537614145982562314").channels.get("537707761908056064").sendM
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["öner"], 
+  aliases: ["öner","suggestion"], 
   permLevel: 0 
 };
 

@@ -9,15 +9,15 @@ exports.run = (client, message) => {
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
     .setDescription('Özel Mesajlarını Kontrol Et ! <a:pikacu:601760026071400458>');
-    message.channel.sendEmbed(ozelmesajkontrol) }
+    message.channel.sendEmbed(ozelmesajkontrol) 
+client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
+}
 	const pingozel = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Bot sürümü: v' + ayarlar.surum + ' Yapımcı: Can \n\n_**BOTU EKLEMEK İÇİN LİNK:**_\n\nhttps://discordbots.org/bot/536627383743283230 \n\n**:copyright: 2019 CanReis**');
-     message.author.sendEmbed(pingozel)
-client.guilds.get("537614145982562314").channels.get("537707761908056064").sendMessage("" + message.author.tag + "** " + exports.help.name + "** Komutunu Kullandı ! [" + message.guild.name + "]");
-};
+    .setDescription('Bot sürümü: v' + ayarlar.surum + ' Yapımcı: Can \n\n_**BOTU EKLEMEK İÇİN LİNK:**_\n\nhttps://top.gg/bot/536627383743283230 \n\n**:copyright: 2019 CanReis**');
+     message.author.sendEmbed(pingozel)};
 
 exports.conf = {
   enabled: true,

@@ -30,7 +30,7 @@
     "ms": "^2.1.2",
     "node-superfetch": "^0.1.10",
     "parse-ms": "^2.1.0",
-    "quick.db": "^6.3.2",
+    "quick.db": "^7.0.0-b22",
     "simple-youtube-api": "^5.2.1",
     "user-instagram": "^2.0.8",
     "xmlhttprequest": "^1.8.0",
